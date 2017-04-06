@@ -28,26 +28,8 @@ public class Application {
 
 		double result = calc.calculate(args);
 
-		/*for (int i = 0; (i < args.length) && (args[i] != null); i++) {
-			if (args[i].equals("'*'")) {
-				System.out.print("* ");
-			} else {
-				System.out.print(args[i] + " ");
-			}
-		}
-		System.out.println(" = " + result);*/
-
 		return result;
 	}
 
-	public static void main(String[] args) throws Exception {
-		/*int size = 0;
-		String store[] = new String[1000];
-		for (int i = 0; i < args.length; i++) {
-			for (int j = 0; j < args[i].length(); j++) {
-				store[size++] = String.valueOf(args[i].charAt(j));
-			}
-		}
-		new Application().calculator(store);*/
-	}
+
 }
