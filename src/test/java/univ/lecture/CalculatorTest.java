@@ -13,4 +13,16 @@ public class CalculatorTest {
         double output = calc.calculator("1+1");
         assertThat(output, is(2));
     }
+    @Test
+    public void testCalculatorAdd2 () {
+    	Application calc = new Application();
+        double output = calc.calculator("1+5");
+        assertThat(output, is(6));
+    }
+    @Test
+    public void testCalculator1 () {
+    	Application calc = new Application();
+        double output = calc.calculator("(1+5)*4");
+        assertThat(output, is(24));
+    }
 }
