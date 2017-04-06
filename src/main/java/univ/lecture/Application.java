@@ -30,4 +30,8 @@ public class Application {
 
 		return result;
 	}
+
+	public static void main(String[] args) throws Exception {
+
+	}
 }
