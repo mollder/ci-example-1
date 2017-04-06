@@ -10,11 +10,7 @@ public class Calculator{
 	Deque<Object> deque;
 
 	public Calculator() {
-<<<<<<< HEAD
 		deque = new ArrayDeque<Object>();
-=======
-		stack = new Stack <Object>();
->>>>>>> origin/leejaeryung
 	}
 
 	public String[] evalPrefix(String[] tokens) {
