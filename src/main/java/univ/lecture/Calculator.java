@@ -6,10 +6,10 @@ import java.util.Stack;
  * Calculator application
  */
 public class Calculator{
-	Stack<Object> stack;
+	Stack stack;
 
 	public Calculator() {
-		stack = new Stack<Object>();
+		stack = new Stack();
 	}
 
 	public String[] evalPrefix(String[] tokens) {
