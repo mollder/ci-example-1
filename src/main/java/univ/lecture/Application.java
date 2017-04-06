@@ -16,8 +16,6 @@
 
 package univ.lecture;
 
-import java.util.StringTokenizer;
-
 public class Application {
 	public Calculator calculator(String[] args) {
 		Calculator calc = new Calculator();
