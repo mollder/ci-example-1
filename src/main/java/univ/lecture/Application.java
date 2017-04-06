@@ -16,6 +16,8 @@
 
 package univ.lecture;
 
+import 실습6주차.AppController;
+
 public class Application {
 	public double calculator(String aa) {
 		Calculator calc = new Calculator();
@@ -29,5 +31,9 @@ public class Application {
 		double result = calc.calculate(args);
 
 		return result;
+	}
+	
+	public static void main(String[] args) {
+
 	}
 }
