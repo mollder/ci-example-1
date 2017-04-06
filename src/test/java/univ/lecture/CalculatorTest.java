@@ -13,4 +13,10 @@ public class CalculatorTest {
         double output = calc.calculator("2+3");
         assertThat(output, is(5.0));
     }
+    @Test
+    public void testCalculator2 () {
+    	Application calc = new Application();
+        double output = calc.calculator("2+3*(3-1)");
+        assertThat(output, is(7.0));
+    }
 }
