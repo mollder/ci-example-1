@@ -30,9 +30,4 @@ public class Application {
 
 		return result;
 	}
-
-	public static void main(String[] args) throws Exception {
-		Application a = new Application();
-		System.out.println(a.calculator("2+5"));
-	}
 }
