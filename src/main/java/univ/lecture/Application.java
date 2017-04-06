@@ -21,7 +21,7 @@ public class Application {
 		Calculator calc = new Calculator();
 		
 		int size = 0;
-		String args[] = new String[1000];
+		String args[] = new String[aa.length()];
 		for (int i = 0; i < aa.length(); i++) {
 				args[size++] = String.valueOf(aa.charAt(i));
 		}
@@ -32,6 +32,7 @@ public class Application {
 	}
 
 	public static void main(String[] args) throws Exception {
-
+		Application a = new Application();
+		System.out.println(a.calculator("2+5"));
 	}
 }

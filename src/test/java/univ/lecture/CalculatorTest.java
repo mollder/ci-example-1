@@ -10,7 +10,7 @@ public class CalculatorTest {
     @Test
     public void testCalculatorAdd () {
     	Application calc = new Application();
-        double output = calc.calculator("1+1");
-        assertThat(output, is(2));
+        double output = calc.calculator("2+3");
+        assertThat(output, is(5.0));
     }
 }
