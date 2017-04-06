@@ -1,15 +1,16 @@
 package univ.lecture;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * Calculator application
  */
 public class Calculator{
-	Stack stack;
+	Deque<Object> deque;
 
 	public Calculator() {
-		stack = new Stack();
+		deque = new ArrayDeque<Object>(10);
 	}
 
 	public String[] evalPrefix(String[] tokens) {
@@ -21,15 +22,15 @@ public class Calculator{
 				
 			} else if (tokens[i].equals("*") || tokens[i].equals("-") || tokens[i].equals("+")
 					|| tokens[i].equals("/")) {
-				this.stack.push(tokens[i]);
+				this.deque.push(tokens[i]);
 			} else if (tokens[i].equals(")")) {
-				returnTokens[tokenSize++] = (String) this.stack.pop();
+				returnTokens[tokenSize++] = (String) this.deque.pop();
 			} else {
 				returnTokens[tokenSize++] = tokens[i];
 			}
 		}
-		while(!stack.isEmpty()) {
-			returnTokens[tokenSize++] = (String) this.stack.pop();
+		while(!deque.isEmpty()) {
+			returnTokens[tokenSize++] = (String) this.deque.pop();
 		}
 		return returnTokens;
 	}
@@ -41,25 +42,25 @@ public class Calculator{
 		
 		for (int i = 0; i < tokens.length && (tokens[i] != null); i++) {
 			if (tokens[i].equals("*")) {
-				firstOperand = Double.parseDouble(this.stack.pop().toString());
-				secondOperand = Double.parseDouble(this.stack.pop().toString());
-				this.stack.push(firstOperand * secondOperand);
+				firstOperand = Double.parseDouble(this.deque.pop().toString());
+				secondOperand = Double.parseDouble(this.deque.pop().toString());
+				this.deque.push(firstOperand * secondOperand);
 			} else if (tokens[i].equals("+")) {
-				firstOperand = Double.parseDouble(this.stack.pop().toString());
-				secondOperand = Double.parseDouble(this.stack.pop().toString());
-				this.stack.push(firstOperand + secondOperand);
+				firstOperand = Double.parseDouble(this.deque.pop().toString());
+				secondOperand = Double.parseDouble(this.deque.pop().toString());
+				this.deque.push(firstOperand + secondOperand);
 			} else if (tokens[i].equals("/")) {
-				firstOperand = Double.parseDouble(this.stack.pop().toString());
-				secondOperand = Double.parseDouble(this.stack.pop().toString());
-				this.stack.push(secondOperand / firstOperand);
+				firstOperand = Double.parseDouble(this.deque.pop().toString());
+				secondOperand = Double.parseDouble(this.deque.pop().toString());
+				this.deque.push(secondOperand / firstOperand);
 			} else if (tokens[i].equals("-")) {
-				firstOperand = Double.parseDouble(this.stack.pop().toString());
-				secondOperand = Double.parseDouble(this.stack.pop().toString());
-				this.stack.push(secondOperand - firstOperand);
+				firstOperand = Double.parseDouble(this.deque.pop().toString());
+				secondOperand = Double.parseDouble(this.deque.pop().toString());
+				this.deque.push(secondOperand - firstOperand);
 			} else {
-				this.stack.push((Object) tokens[i]);
+				this.deque.push((Object) tokens[i]);
 			}
 		}
-		return Double.parseDouble(this.stack.pop().toString());
+		return Double.parseDouble(this.deque.pop().toString());
 	}
 }
