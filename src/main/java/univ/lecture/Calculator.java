@@ -6,10 +6,10 @@ import java.util.Stack;
  * Calculator application
  */
 public class Calculator{
-	Stack stack;
+	Stack<Object> stack;
 
 	public Calculator() {
-		stack = new Stack();
+		stack = new Stack<Object>();
 	}
 
 	public String[] evalPrefix(String[] tokens) {
@@ -35,29 +35,29 @@ public class Calculator{
 	}
 
 	public double calculate(String[] tokens) {
-		tokens = evalPrefix(tokens);
+		String[] calTokens = evalPrefix(tokens);
 		double firstOperand;
 		double secondOperand;
 		
-		for (int i = 0; i < tokens.length && (tokens[i] != null); i++) {
-			if (tokens[i].equals("*")) {
+		for (int i = 0; i < calTokens.length && (calTokens[i] != null); i++) {
+			if (calTokens[i].equals("*")) {
 				firstOperand = Double.parseDouble(this.stack.pop().toString());
 				secondOperand = Double.parseDouble(this.stack.pop().toString());
 				this.stack.push(firstOperand * secondOperand);
-			} else if (tokens[i].equals("+")) {
+			} else if (calTokens[i].equals("+")) {
 				firstOperand = Double.parseDouble(this.stack.pop().toString());
 				secondOperand = Double.parseDouble(this.stack.pop().toString());
 				this.stack.push(firstOperand + secondOperand);
-			} else if (tokens[i].equals("/")) {
+			} else if (calTokens[i].equals("/")) {
 				firstOperand = Double.parseDouble(this.stack.pop().toString());
 				secondOperand = Double.parseDouble(this.stack.pop().toString());
 				this.stack.push(secondOperand / firstOperand);
-			} else if (tokens[i].equals("-")) {
+			} else if (calTokens[i].equals("-")) {
 				firstOperand = Double.parseDouble(this.stack.pop().toString());
 				secondOperand = Double.parseDouble(this.stack.pop().toString());
 				this.stack.push(secondOperand - firstOperand);
 			} else {
-				this.stack.push((Object) tokens[i]);
+				this.stack.push((Object) calTokens[i]);
 			}
 		}
 		return Double.parseDouble(this.stack.pop().toString());
