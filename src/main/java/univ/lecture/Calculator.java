@@ -10,7 +10,11 @@ public class Calculator{
 	Deque<Object> deque;
 
 	public Calculator() {
+<<<<<<< HEAD
 		deque = new ArrayDeque<Object>();
+=======
+		stack = new Stack <Object>();
+>>>>>>> origin/leejaeryung
 	}
 
 	public String[] evalPrefix(String[] tokens) {
@@ -19,7 +23,7 @@ public class Calculator{
 		
 		for (int i = 0; (i < tokens.length) && (tokens[i] != null); i++) {
 			if ("(".equals(tokens[i])) {
-				
+				continue;
 			} else if ("*".equals(tokens[i]) || "-".equals(tokens[i]) || "+".equals(tokens[i])
 					|| "/".equals(tokens[i])) {
 				this.deque.push(tokens[i]);
