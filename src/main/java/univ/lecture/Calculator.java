@@ -39,10 +39,6 @@ public class Calculator{
 		double firstOperand;
 		double secondOperand;
 		
-		for(int i = 0; (i < tokens.length) && tokens[i] !=null; i++) {
-			System.out.print(tokens[i]);
-		}
-
 		for (int i = 0; i < tokens.length && (tokens[i] != null); i++) {
 			if (tokens[i].equals("'*'")) {
 				firstOperand = Double.parseDouble(this.stack.pop().toString());
