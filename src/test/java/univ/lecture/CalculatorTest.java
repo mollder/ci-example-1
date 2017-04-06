@@ -14,27 +14,21 @@ public class CalculatorTest {
         assertThat(output, is(5.0));
     }
     @Test
-    public void testCalculator2 () {
-    	Application calc = new Application();
-        double output = calc.calculator("2+3*(3-1)");
-        assertThat(output, is(7.0));
-    }
-    @Test
-    public void testCalculator3 () {
-    	Application calc = new Application();
-        double output = calc.calculator("2+3*(3-1)-((7-3)/2)");
-        assertThat(output, is(6.0));
-    }
-    @Test
-    public void testCalculator4 () {
-    	Application calc = new Application();
-        double output = calc.calculator("2+3*(3-1)-(((7-3)/2)+6/3)+3+1");
-        assertThat(output, is(8.0));
-    }
-    @Test
     public void testCalculator5 () {
     	Application calc = new Application();
         double output = calc.calculator("6/3");
         assertThat(output, is(2.0));
+    }
+    @Test
+    public void testCalculator1 () {
+    	Application calc = new Application();
+        double output = calc.calculator("((1+2)*3)");
+        assertThat(output, is(9.0));
+    }
+    @Test
+    public void testCalculator3 () {
+    	Application calc = new Application();
+        double output = calc.calculator("((2-3)*((1-2)*3)/5)");
+        assertThat(output, is(0.6));
     }
 }
