@@ -21,14 +21,14 @@ public class Application {
 		Calculator calc = new Calculator();
 
 		int size = 0;
-		String args[] = new String[aa.length()];
+		String[] args = new String[aa.length()];
 		for (int i = 0; i < aa.length(); i++) {
 			args[size++] = String.valueOf(aa.charAt(i));
 		}
 
-		double result = calc.calculate(args);
+		return calc.calculate(args);
 
-		return result;
+		
 	}
 
 	public static void main(String[] args) throws Exception {

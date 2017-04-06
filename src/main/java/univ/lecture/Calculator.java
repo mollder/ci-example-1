@@ -9,7 +9,7 @@ public class Calculator{
 	Stack<Object> stack;
 
 	public Calculator() {
-		stack = new Stack<Object>();
+		stack = new Stack <Object>();
 	}
 
 	public String[] evalPrefix(String[] tokens) {
@@ -18,7 +18,7 @@ public class Calculator{
 		
 		for (int i = 0; (i < tokens.length) && (tokens[i] != null); i++) {
 			if ("(".equals(tokens[i])) {
-				
+				continue;
 			} else if ("*".equals(tokens[i]) || "-".equals(tokens[i]) || "+".equals(tokens[i])
 					|| "/".equals(tokens[i])) {
 				this.stack.push(tokens[i]);
