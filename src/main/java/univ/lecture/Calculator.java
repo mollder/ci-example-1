@@ -28,7 +28,7 @@ public class Calculator{
 				returnTokens[tokenSize++] = tokens[i];
 			}
 		}
-		while(stack.size() != 0) {
+		while(!stack.isEmpty()) {
 			returnTokens[tokenSize++] = (String) this.stack.pop();
 		}
 		return returnTokens;
