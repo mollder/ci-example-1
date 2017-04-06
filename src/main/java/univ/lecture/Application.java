@@ -19,10 +19,17 @@ package univ.lecture;
 public class Application {
     public Calculator calculator(String[] args) {
         Calculator calc = new Calculator();
-        String exp = args[0];
 
-        int result = calc.calculate(exp);
-        System.out.println(String.format("%s = %d", exp, result));
+        double result = calc.calculate(args);
+
+        for (int i = 0; i < args.length; i++) {
+			if (args[i].equals("'*'")) {
+				System.out.print("* ");
+			} else {
+				System.out.print(args[i]+" ");
+			}
+		}
+		System.out.println(" = "+result);
 
         return calc;
     }
