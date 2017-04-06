@@ -17,31 +17,37 @@
 package univ.lecture;
 
 public class Application {
-	public Calculator calculator(String[] args) {
+	public double calculator(String aa) {
 		Calculator calc = new Calculator();
+		
+		int size = 0;
+		String args[] = new String[1000];
+		for (int i = 0; i < aa.length(); i++) {
+				args[size++] = String.valueOf(aa.charAt(i));
+		}
 
 		double result = calc.calculate(args);
 
-		for (int i = 0; (i < args.length) && (args[i] != null); i++) {
+		/*for (int i = 0; (i < args.length) && (args[i] != null); i++) {
 			if (args[i].equals("'*'")) {
 				System.out.print("* ");
 			} else {
 				System.out.print(args[i] + " ");
 			}
 		}
-		System.out.println(" = " + result);
+		System.out.println(" = " + result);*/
 
-		return calc;
+		return result;
 	}
 
 	public static void main(String[] args) throws Exception {
+		/*int size = 0;
 		String store[] = new String[1000];
-		int size = 0;
 		for (int i = 0; i < args.length; i++) {
 			for (int j = 0; j < args[i].length(); j++) {
 				store[size++] = String.valueOf(args[i].charAt(j));
 			}
 		}
-		new Application().calculator(store);
+		new Application().calculator(store);*/
 	}
 }
