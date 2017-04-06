@@ -19,29 +19,31 @@ package univ.lecture;
 import java.util.StringTokenizer;
 
 public class Application {
-    public Calculator calculator(String[] args) {
-        Calculator calc = new Calculator();
+	public Calculator calculator(String[] args) {
+		Calculator calc = new Calculator();
 
-        double result = calc.calculate(args);
+		double result = calc.calculate(args);
 
-        for (int i = 0; i < args.length; i++) {
+		for (int i = 0; (i < args.length) && (args[i] != null); i++) {
 			if (args[i].equals("'*'")) {
 				System.out.print("* ");
 			} else {
-				System.out.print(args[i]+" ");
+				System.out.print(args[i] + " ");
 			}
 		}
-		System.out.println(" = "+result);
+		System.out.println(" = " + result);
 
-        return calc;
-    }
+		return calc;
+	}
 
 	public static void main(String[] args) throws Exception {
+		String store[] = new String[1000];
 		int size = 0;
-		String[] store = new String[args[0].length()];
-		for(int i = 0; i < args[0].length(); i++) {
-			store[size++] = String.valueOf(args[0].charAt(i));
+		for (int i = 0; i < args.length; i++) {
+			for (int j = 0; j < args[i].length(); j++) {
+				store[size++] = String.valueOf(args[i].charAt(j));
+			}
 		}
-        new Application().calculator(store);
+		new Application().calculator(store);
 	}
 }

@@ -14,10 +14,9 @@ public class Calculator{
 
 	public String[] evalPrefix(String[] tokens) {
 		int tokenSize = 0;
-		int storeSize = 0;
 		String[] returnTokens = new String[tokens.length];
-		String[] storeTokens = new String[tokens.length];
-		for (int i = 0; i < tokens.length; i++) {
+		
+		for (int i = 0; (i < tokens.length) && (tokens[i] != null); i++) {
 			if (tokens[i].equals("(")) {
 				
 			} else if (tokens[i].equals("'*'") || tokens[i].equals("-") || tokens[i].equals("+")
