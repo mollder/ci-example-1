@@ -16,20 +16,20 @@ public class CalculatorTest {
     @Test
     public void testCalculator2 () {
     	Application calc = new Application();
-        double output = calc.calculator("6/3+(2+1)");
+        double output = calc.calculator("((6/3)+(2+1))");
         assertThat(output, is(5.0));
     }
     @Test
     public void testCalculator3 () {
     	Application calc = new Application();
-        double output = calc.calculator("6/3+(2+1)-(1/2)");
+        double output = calc.calculator("(((6/3)+(2+1))-(1/2))");
         assertThat(output, is(4.5));
     }
     @Test
     public void testCalculator4 () {
     	Application calc = new Application();
-        double output = calc.calculator("6/3+(2+1)-(1/2)+7");
-        assertThat(output, is(11.5));
+        double output = calc.calculator("(((6/3)+(2+1))-((1/2)+7))");
+        assertThat(output, is(-2.5));
     }
     @Test
     public void testCalculator5 () {
