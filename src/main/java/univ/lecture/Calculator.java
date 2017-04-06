@@ -17,12 +17,12 @@ public class Calculator{
 		String[] returnTokens = new String[tokens.length];
 		
 		for (int i = 0; (i < tokens.length) && (tokens[i] != null); i++) {
-			if (tokens[i].equals("(")) {
+			if ("(".equals(tokens[i])) {
 				
-			} else if (tokens[i].equals("*") || tokens[i].equals("-") || tokens[i].equals("+")
-					|| tokens[i].equals("/")) {
+			} else if ("*".equals(tokens[i]) || "-".equals(tokens[i]) || "+".equals(tokens[i])
+					|| "/".equals(tokens[i])) {
 				this.stack.push(tokens[i]);
-			} else if (tokens[i].equals(")")) {
+			} else if (")".equals(tokens[i])) {
 				returnTokens[tokenSize++] = (String) this.stack.pop();
 			} else {
 				returnTokens[tokenSize++] = tokens[i];
