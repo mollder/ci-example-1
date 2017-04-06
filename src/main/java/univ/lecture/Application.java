@@ -16,6 +16,8 @@
 
 package univ.lecture;
 
+import java.util.StringTokenizer;
+
 public class Application {
     public Calculator calculator(String[] args) {
         Calculator calc = new Calculator();
@@ -35,6 +37,11 @@ public class Application {
     }
 
 	public static void main(String[] args) throws Exception {
-        new Application().calculator(args);
+		int size = 0;
+		String[] store = new String[args[0].length()];
+		for(int i = 0; i < args[0].length(); i++) {
+			store[size++] = String.valueOf(args[0].charAt(i));
+		}
+        new Application().calculator(store);
 	}
 }
