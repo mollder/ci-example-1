@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Sample
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: kyle
+Implementation-Vendor-Id: com.riotgames
+Build-Jdk: 1.8.0_51
+Implementation-URL: https://github.com/tony-riot/ci-example-1
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Riot Games, Inc.
+
